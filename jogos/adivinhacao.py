@@ -8,7 +8,7 @@ def jogar():
 
     numero_secreto = random.randrange(1, 101)
     total_de_tentativas = 0
-    pontos = 1000
+    pontos = 500
 
     print("Qual o nível de dificuldade?")
     print("(1) Fácil (2) Médio (3) Difícil")
