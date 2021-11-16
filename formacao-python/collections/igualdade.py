@@ -8,21 +8,17 @@ class ContaSalario:
             return False
         return self._codigo == outro._codigo and self._saldo == outro._saldo
 
-    def deposita(self, valor):
-        self._saldo += valor
-
-    def __str__(self):
-        return f"[>>Codigo {self._codigo} Saldo {self._saldo}<<]"
-
-
-class ContaMultiploSalario(ContaSalario):
-    pass
+    def __lt__(self, outro):
+        if self._saldo != outro._saldo:
+            return self._saldo < outro._saldo
+        return self._codigo < outro._codigo
 
 
-conta1 = ContaSalario(37)
-print(conta1)
+conta_do_guilherme = ContaSalario(1700)
+conta_do_guilherme.deposita(500)
 
-conta2 = ContaSalario(37)
-print(conta2)
+conta_da_daniela = ContaSalario(3)
+conta_da_daniela.deposita(1000)
 
-print(conta1 == conta2)
+conta_do_paulo = ContaSalario(133)
+conta_do_paulo.deposita(500)
